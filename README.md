@@ -14,7 +14,7 @@ $pag = Pagination::paginate($total_nr, $current_page, 20);
 // Here we get our data using limit, offset
 
 // Build the pagination
-$pagination = Pagination::factory(array(
+$pagination = new Pagination(array(
 	'total' => $total_nr, // The nmber of all elements
 	'items_per_page' => $pag['pagination'], // How many items will there be on the page
 	'base_url' => $url,  // The base url used, this can contain $_GET elements too, they will not be overwritten
@@ -31,3 +31,10 @@ $pagination = Pagination::factory(array(
 // Generate the array of pagination links
 $pagination_links = $pagination->render();
 ```
+
+You can also set the mentioned variables after initialization like:
+
+```php
+$pagination->base_url = '';
+```
+Note that you have to set all variables before calling render()
