@@ -24,7 +24,7 @@ class Pagination
 		'last_string' => '>>'
 	);
 	
-	private function __construct(Array $data = array())
+	public function __construct(Array $data = array())
 	{
 		foreach ( $this->data as $key => $value )
 		{
@@ -33,7 +33,10 @@ class Pagination
 				$this->data[$key] = $data[$key];
 			}
 		}
-		
+	}	
+	
+	public function render()
+	{
 		$item = array('url' => '', 'type' => 0, 'nr' => 0);
 		
 		$pagenumber = ceil($this->data['total']/$this->data['items_per_page']);
@@ -160,16 +163,16 @@ class Pagination
 		$item['type'] = Pagination::LAST;
 		$item['nr'] = $this->data['last_string'];
 		array_push($this->output,$item);
+		
+		return $this->output;
 	}
 	
-	public static function factory(Array $data = array())
-    {
-		return new Pagination($data);
-    }	
-	
-	public function render()
+	/**
+	 * PHP magic function used to set internal data from outside
+	 */
+	public function __set($name, $value)
 	{
-		return $this->output;
+		$this->data[$name] = $value;
 	}
 	
 	/**
