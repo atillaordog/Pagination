@@ -77,18 +77,18 @@ class Pagination
 		}
 		
 		$item['url'] = $first;
-		$item['type'] = Pagination::FIRST;
+		$item['type'] = self::FIRST;
 		$item['nr'] = $this->data['first_string'];
 		array_push($this->output,$item);
 			
 		$item['url'] = $previous;
-		$item['type'] = Pagination::PREVIOUS;
+		$item['type'] = self::PREVIOUS;
 		$item['nr'] = $this->data['prev_string'];
 		array_push($this->output,$item);
 		
 		$query[$this->data['page_name']] = 1;
 		$item['url'] = $base_url.'?'.http_build_query($query);
-		$item['type'] = Pagination::LINK;
+		$item['type'] = self::LINK;
 		$item['nr'] = 1;
 		array_push($this->output,$item);
 		
@@ -106,7 +106,7 @@ class Pagination
 		if($this->data['current_page']+$leftright > $linknumber+1)
 		{
 			$item['url'] = '';
-			$item['type'] = Pagination::DOTS;
+			$item['type'] = self::DOTS;
 			$item['nr'] = $this->data['dots_string'];
 			array_push($this->output,$item);
 		}
@@ -117,7 +117,7 @@ class Pagination
 			{
 				$query[$this->data['page_name']] = $i;
 				$item['url'] = $base_url.'?'.http_build_query($query);
-				$item['type'] = Pagination::LINK;
+				$item['type'] = self::LINK;
 				$item['nr'] = $i;
 				array_push($this->output,$item);
 			}
@@ -126,7 +126,7 @@ class Pagination
 		if($data['current_page']+$leftright < $pagenumber)
 		{
 			$item['url'] = '';
-			$item['type'] = Pagination::DOTS;
+			$item['type'] = self::DOTS;
 			$item['nr'] = $this->data['dots_string'];
 			array_push($this->output,$item);
 		}
@@ -135,7 +135,7 @@ class Pagination
 		{
 			$query[$this->data['page_name']] = $pagenumber;
 			$item['url'] = $base_url.'?'.http_build_query($query);
-			$item['type'] = Pagination::LINK;
+			$item['type'] = self::LINK;
 			$item['nr'] = $pagenumber;
 			array_push($this->output,$item);
 		}
@@ -155,12 +155,12 @@ class Pagination
 		}
 		
 		$item['url'] = $previous;
-		$item['type'] = Pagination::NEXT;
+		$item['type'] = self::NEXT;
 		$item['nr'] = $this->data['next_string'];
 		array_push($this->output,$item);
 			
 		$item['url'] = $last;
-		$item['type'] = Pagination::LAST;
+		$item['type'] = self::LAST;
 		$item['nr'] = $this->data['last_string'];
 		array_push($this->output,$item);
 		
