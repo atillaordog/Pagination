@@ -1,11 +1,11 @@
-#Pagination
+Pagination
+=============
 
 This is a very basic pagination class that helps easily create an array with the links and numbers of pagination.
 
 Using this class is as easy as follows:
 
 ```
-
 // First we have to get the total elements
 
 // Create the limit, offset and other useful data first
@@ -30,5 +30,4 @@ $pagination = Pagination::factory(array(
 
 // Generate the array of pagination links
 $pagination_links = $pagination->render();
-
 ```
