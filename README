@@ -5,7 +5,7 @@ This is a very basic pagination class that helps easily create an array with the
 
 Using this class is as easy as follows:
 
-```
+```php
 // First we have to get the total elements
 
 // Create the limit, offset and other useful data first
