@@ -7,9 +7,9 @@ if (!defined('PAGINATION_ROOT')) {
     define('PAGINATION_ROOT', dirname(__FILE__) . DIRECTORY_SEPARATOR);
 }
 
-spl_autoload_register('autoload');
+spl_autoload_register('pagination_autoload');
 
-function autoload($class)
+function pagination_autoload($class)
 {
 	if ( class_exists($class,FALSE) ) {
 		//    Already loaded
