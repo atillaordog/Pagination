@@ -123,7 +123,7 @@ class Pagination
 			}
 		}
 		
-		if($data['current_page']+$leftright < $pagenumber)
+		if($this->data['current_page']+$leftright < $pagenumber)
 		{
 			$item['url'] = '';
 			$item['type'] = self::DOTS;
