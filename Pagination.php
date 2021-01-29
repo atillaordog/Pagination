@@ -154,7 +154,7 @@ class Pagination
 			$last = '';
 		}
 		
-		$item['url'] = $next;
+		$item['url'] = $previous;
 		$item['type'] = self::NEXT;
 		$item['nr'] = $this->data['next_string'];
 		array_push($this->output,$item);
