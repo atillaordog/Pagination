@@ -142,7 +142,7 @@ class Pagination
 		
 		if($this->data['current_page'] < $pagenumber)
 		{
-			$query[$this->data['page_name']] = $data['current_page']+1;
+			$query[$this->data['page_name']] = $this->data['current_page']+1;
 			$previous = $base_url.'?'.http_build_query($query);
 			
 			$query[$this->data['page_name']] = $pagenumber;
