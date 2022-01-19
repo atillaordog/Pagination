@@ -89,6 +89,7 @@ class Pagination
 		$query[$this->data['page_name']] = 1;
 		$item['url'] = $base_url.'?'.http_build_query($query);
 		$item['type'] = self::LINK;
+		$item['selected'] = $this->data['current_page'] == 1;
 		$item['nr'] = 1;
 		array_push($this->output,$item);
 		
@@ -118,6 +119,7 @@ class Pagination
 				$query[$this->data['page_name']] = $i;
 				$item['url'] = $base_url.'?'.http_build_query($query);
 				$item['type'] = self::LINK;
+				$item['selected'] = $this->data['current_page'] == $i;
 				$item['nr'] = $i;
 				array_push($this->output,$item);
 			}
@@ -137,6 +139,7 @@ class Pagination
 			$item['url'] = $base_url.'?'.http_build_query($query);
 			$item['type'] = self::LINK;
 			$item['nr'] = $pagenumber;
+			$item['selected'] = $this->data['current_page'] == $pagenumber;
 			array_push($this->output,$item);
 		}
 		
