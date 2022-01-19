@@ -78,11 +78,13 @@ class Pagination
 		
 		$item['url'] = $first;
 		$item['type'] = self::FIRST;
+		$item['selected'] = false;
 		$item['nr'] = $this->data['first_string'];
 		array_push($this->output,$item);
 			
 		$item['url'] = $previous;
 		$item['type'] = self::PREVIOUS;
+		$item['selected'] = false;
 		$item['nr'] = $this->data['prev_string'];
 		array_push($this->output,$item);
 		
@@ -108,6 +110,7 @@ class Pagination
 		{
 			$item['url'] = '';
 			$item['type'] = self::DOTS;
+			$item['selected'] = false;
 			$item['nr'] = $this->data['dots_string'];
 			array_push($this->output,$item);
 		}
@@ -129,6 +132,7 @@ class Pagination
 		{
 			$item['url'] = '';
 			$item['type'] = self::DOTS;
+			$item['selected'] = false;
 			$item['nr'] = $this->data['dots_string'];
 			array_push($this->output,$item);
 		}
@@ -159,11 +163,13 @@ class Pagination
 		
 		$item['url'] = $previous;
 		$item['type'] = self::NEXT;
+		$item['selected'] = false;
 		$item['nr'] = $this->data['next_string'];
 		array_push($this->output,$item);
 			
 		$item['url'] = $last;
 		$item['type'] = self::LAST;
+		$item['selected'] = false;
 		$item['nr'] = $this->data['last_string'];
 		array_push($this->output,$item);
 		
